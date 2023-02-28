@@ -1,0 +1,40 @@
+
+.headerNav ul {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 40px;
+
+    li {
+        list-style: none;
+    }
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    &:before, &:after {
+        content: '';
+        left: 50%;
+        position: absolute;
+        filter: blur(25px);
+        transform: translateZ(0);
+    }
+
+    &:before {
+        background: var(--secondary-glow);
+        border-radius: 50%;
+        width: 240px;
+        height: 150px;
+        margin-left: -200px;
+    }
+
+    &:after {
+        background: var(--primary-glow);
+        width: 220px;
+        height: 90px;
+        z-index: -1;
+    }
+}
