@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'] })
 export function HeaderComponent() {
   return (
     <>
-      <header className={inter.className}>
+      <header className={`${inter.className} ${styles.wrapper}`}>
         <nav className={styles.headerNav}>
           <ul>
             <li>
