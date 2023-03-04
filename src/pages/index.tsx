@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import { HeaderComponent } from '@/components/header'
 import { Main } from '@/components/main'
+import { FooterComponent } from '@/components/footer'
 import styles from '@/styles/index.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -17,6 +18,7 @@ export default function Home() {
       </Head>
       <HeaderComponent />
       <Main />
+      <FooterComponent />
     </>
   )
 }
