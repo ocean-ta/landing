@@ -1,18 +1,53 @@
 import { Inter } from 'next/font/google'
 import Link from 'next/link'
+import Image from 'next/image';
+
+import Logo from './assets/logo.webp'
+import EthereumCoin from './assets/ethereum.png'
+import BitcoinCoin from './assets/bitcoin.png'
 
 import styles from './main.module.scss'
 
 const inter = Inter({ subsets: ['latin'] })
 
+
 export function Main() {
   return (
     <>
       <main className={`${inter.className} ${styles.main} ${styles.wrapper}`}>
+        <Image
+          className={styles.bitcoin}
+          src={BitcoinCoin}
+          alt="Logo"
+          width={350}
+          placeholder="blur"
+        />
+        <div className={styles.bitcoinGlow}  />
+
+        <Image
+          className={styles.ethereum}
+          src={EthereumCoin}
+          alt="Logo"
+          width={400}
+          placeholder="blur"
+        />
+        <div className={styles.ethereumGlow}  />
+
         <div className={styles.blockWrapper}>
+          <Image
+            src={Logo}
+            alt="Logo"
+            width={350}
+            placeholder="blur"
+          />
           <div className={styles.block}>
-            <div className={styles.mainTitle}>Join Ocean Trading Analytics</div>
-            <Link href="/" className={styles.joinButton}>Join Now</Link>
+            <div className={styles.mainTitle}>
+              Ocean Trading Analytics
+            </div>
+            <div className={styles.mainSubTitle}>
+              Ocean TA — перше криптоком'юніті, де було розроблено та надано авторську беззбиткову стратегію локальних торгів на ф'ючерсах. Ця стратегія запатентована нами і не має аналогів у світі.
+            </div>
+            <Link href="/" className={styles.joinButton}>Послуги</Link>
           </div>
         </div>
 
@@ -40,7 +75,8 @@ export function Main() {
         </section>
 
         <section className={styles.section}>
-          <header>Услуги Ocean TA</header>
+          <header>Послуги Ocean TA</header>
+
             <div className={styles.cardWrapper}>
               <div className={styles.card}>
                 <div>
@@ -52,11 +88,11 @@ export function Main() {
 
                 <div className={styles.cardButtonsWrapper}>
                   <button className={styles.cardButton}>
-                    Купить за фиат
+                    50 USD
                     {/*Кнопка "Купить за фиат" (банковская карта) - ссылку партнера позже пришлю*/}
                   </button>
                   <button className={styles.cardButton}>
-                    Купить за криптовалюту
+                    50 USDT
                     {/*Кнопка "Купить за криптовалюту" (перевод криптовалюты) - надеемся на твою помощь*/}
                   </button>
                 </div>
