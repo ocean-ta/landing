@@ -7,88 +7,98 @@
 }
 
 .main {
-  padding-bottom: 150px;
+  padding-bottom: 180px;
+}
+
+.bitcoin {
+  z-index: 1;
+}
+.bitcoin, .bitcoinGlow {
+  position: absolute;
+  top: 680px;
+  left: -195px;
+  animation: 7s moving ease-in-out infinite;
+
+  @keyframes moving {
+    0% {
+      transform: translateY(10%);
+    }
+
+    50% {
+      transform: translateY(15%);
+    }
+
+    100% {
+      transform: translateY(10%);
+    }
+  }
+}
+
+.bitcoinGlow {
+  top: 627px;
+  width: 370px;
+  height: 320px;
+  border-radius: 50%;
+  background: goldenrod;
+  opacity: .25;
+  filter: blur(70px);
+}
+
+.ethereum, .ethereumGlow {
+  position: absolute;
+  top: 262px;
+  right: -214px;
+
+  animation: 7s moving ease-in-out infinite;
+
+  @keyframes moving {
+    0% {
+      transform: translateY(15%);
+    }
+
+    50% {
+      transform: translateY(10%);
+    }
+
+    100% {
+      transform: translateY(15%);
+    }
+  }
+}
+
+.ethereumGlow {
+  top: 210px;
+  width: 370px;
+  height: 320px;
+  border-radius: 50%;
+  background: silver;
+  opacity: .25;
+  filter: blur(70px);
 }
 
 .blockWrapper {
-  padding-top: 350px;
+  padding-top: 180px;
   padding-bottom: 350px;
   display: flex;
   justify-content: center;
 }
 
 .block {
+  padding-top: 20px;
+  width: 900px;
   display: flex;
   flex-direction: column;
   position: relative;
-
-  &:before, &:after {
-    content: '';
-    position: absolute;
-    filter: blur(65px);
-  }
-
-  &:before {
-    background: var(--secondary-glow);
-    border-radius: 50%;
-    width: 440px;
-    height: 280px;
-    transform: translate(-65%, 40%);
-    animation: glow-moving-before linear 20s infinite;
-
-  }
-
-  @keyframes glow-moving-before {
-    0% {
-      filter: blur(65px);
-      transform: translate(-65%, 40%);
-    }
-
-    50% {
-      filter: blur(45px);
-      transform: translate(-25%, 40%);
-    }
-
-    100% {
-      filter: blur(65px);
-      transform: translate(-65%, 40%);
-    }
-  }
-
-  &:after {
-    background: var(--primary-glow);
-    width: 500px;
-    height: 280px;
-    z-index: -1;
-    transform: translate(-80%, -20%);
-
-    animation: glow-moving-after linear 30s infinite 5s;
-  }
-
-  @keyframes glow-moving-after {
-    0% {
-      filter: blur(65px);
-      transform: translate(-65%, -20%);
-    }
-
-    50% {
-      filter: blur(45px);
-      transform: translate(-35%, -40%);
-    }
-
-    100% {
-      filter: blur(85px);
-      transform: translate(-65%, -20%);
-    }
-  }
 }
 
 .mainTitle {
   font-weight: 500;
   font-size: 42px;
-  text-align: center;
-  text-transform: uppercase;
   background: transparent;
+}
+
+.mainSubTitle {
+  padding-top: 30px;
 }
 
 .subTitle {
@@ -96,13 +106,20 @@
 }
 
 .joinButton {
+  color: #000;
   margin-top: 30px;
   align-self: flex-end;
   display: inline-block;
-  padding: 20px 50px;
-  border: 1px solid #fff;
+  padding: 15px 50px;
+  border-radius: 5px;
   text-transform: uppercase;
   text-align: center;
+  box-shadow: 0px 0px 90px 7px rgba(0, 242, 255, .25);
+  background: rgba(0, 242, 255, 0.9);
+
+  &:hover {
+    background: rgba(0, 242, 255, 1);
+  }
 }
 
 .section {
@@ -128,7 +145,7 @@
   padding: 30px;
   width: 320px;
   height: 500px;
-  border: 1px solid #fff;
+  border: 1px solid #ffffff5c;
   border-radius: 3px;
 }
 
